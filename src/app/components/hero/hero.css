@@ -3086,3 +3086,175 @@ strong {
 .contact-section h3 {
   color: #ffffff;
 }
+
+/* =========================================================
+   UPDATED PROJECT IMAGE SYSTEM
+   Keeps portfolio screenshots compact and prevents oversized images.
+========================================================= */
+
+.project-gallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.project-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 155px;
+  aspect-ratio: auto;
+  overflow: hidden;
+  background: #020303;
+  border: 1px solid rgba(255,255,255,.10);
+  isolation: isolate;
+}
+
+.project-thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #050809;
+  opacity: .88;
+  transition: transform .55s ease, opacity .35s ease, filter .35s ease;
+}
+
+.project-thumbnail:hover img {
+  transform: scale(1.035);
+  opacity: 1;
+  filter: brightness(.78);
+}
+
+.project-thumbnail:hover {
+  transform: translateY(-4px);
+}
+
+.project-image {
+  overflow: hidden;
+}
+
+.project-gallery-footer {
+  margin-top: 14px;
+}
+
+/* Large screenshot inside the lightbox, never larger than the viewport. */
+.project-lightbox {
+  overflow: hidden;
+  padding: 24px;
+}
+
+.lightbox-content {
+  width: min(1100px, 94vw);
+  max-width: 1100px;
+  max-height: 92vh;
+}
+
+.lightbox-image-wrapper {
+  width: auto;
+  max-width: 100%;
+  max-height: 80vh;
+  padding: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-image-wrapper img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 76vh;
+  object-fit: contain;
+}
+
+/* Smooth professional motion */
+.project-card,
+.about-card,
+.skill-category,
+.tool-item,
+.timeline-item {
+  will-change: transform;
+}
+
+.project-card {
+  transition: transform .45s ease, border-color .45s ease, box-shadow .45s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.tool-item,
+.about-card {
+  transition: transform .35s ease, border-color .35s ease, background .35s ease;
+}
+
+.tool-item:hover,
+.about-card:hover {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 1100px) {
+  .project-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .project-thumbnail {
+    height: 145px;
+  }
+}
+
+@media (max-width: 760px) {
+  .project-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .project-thumbnail {
+    height: 125px;
+  }
+
+  .lightbox-content {
+    width: 96vw;
+  }
+
+  .lightbox-image-wrapper {
+    max-height: 78vh;
+  }
+
+  .lightbox-image-wrapper img {
+    max-height: 72vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-thumbnail {
+    height: 105px;
+  }
+
+  .thumbnail-label {
+    font-size: 8px;
+    padding: 5px 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-thumbnail,
+  .project-thumbnail img,
+  .about-card,
+  .tool-item {
+    transition: none !important;
+    animation: none !important;
+  }
+}
