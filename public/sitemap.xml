@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://jonathaneguna.vercel.app/</loc>
+  </url>
+
+  <url>
+    <loc>https://jonathaneguna.vercel.app/about</loc>
+  </url>
+
+  <url>
+    <loc>https://jonathaneguna.vercel.app/experience</loc>
+  </url>
+
+  <url>
+    <loc>https://jonathaneguna.vercel.app/projects</loc>
+  </url>
+
+  <url>
+    <loc>https://jonathaneguna.vercel.app/projects/school-management-system</loc>
+  </url>
+
+</urlset>
